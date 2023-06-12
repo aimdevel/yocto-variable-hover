@@ -2,6 +2,10 @@
   "name": "yocto-variable-hover",
   "displayName": "yocto-variable-hover",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aimdevel/yocto-variable-hover.git"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.79.0"
