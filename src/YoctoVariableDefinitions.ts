@@ -1,4 +1,4 @@
-interface Definition{
+export interface Definition{
     name: string;
     content: string;
 }

@@ -2,13 +2,13 @@ import * as vscode from 'vscode';
 import { Definition, yoctoVariables } from './YoctoVariableDefinitions';
 
 export class YoctoHoverProvider implements vscode.HoverProvider{
-    yoctoVarDefs: list;
+    yoctoVarDefs: Array<Definition>;
     
     constructor(){
         this.yoctoVarDefs = yoctoVariables;
     }
 
-    findVariable(varName: string):yoctoVar{
+    findVariable(varName: string):Definition|undefined{
         console.log("in:" + varName);
         const result = this.yoctoVarDefs.find((val) => val.name === varName);
         return result;
@@ -26,8 +26,9 @@ export class YoctoHoverProvider implements vscode.HoverProvider{
         const word = document.getText(pos);
         
         const yoctoVar = this.findVariable(word);
-        
+        if(yoctoVar === undefined){
+            return;
+        }
         return new vscode.Hover(yoctoVar.content);
-
     }
 }
