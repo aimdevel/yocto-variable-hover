@@ -16,21 +16,6 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	
-	let disposable = vscode.commands.registerCommand('yocto-variable-hover.CreateYoctoVariablesDB', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Create DB!');
-		const dbPath = vscode.workspace.workspaceFolders;
-        var dbName = "";
-        if(dbPath !== undefined){
-            console.log(dbPath[0].uri.fsPath);
-            dbName = dbPath[0].uri.fsPath + "/.vscode/" + "variables.rst.txt";
-        }
-		const varList = new VariablesGlossaryScanner(dbName);
-		varList.scanFile();
-		varList.createDb();
-	});
 
 	const hoverProvider = new YoctoHoverProvider();
 	vscode.languages.registerHoverProvider('bitbake', hoverProvider);

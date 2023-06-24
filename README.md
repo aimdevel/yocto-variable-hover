@@ -12,10 +12,9 @@ TODO: add image
 
 ## Extension Settings
 
-1. Please download this extension and variables.db from github release page.  
-2. Place variables.db in .vscode directory in your workspace.
-3. Install the extension.  
-4. reload vscode.
+1. Please download this extension from github release page.  
+2. Install the extension.  
+3. reload vscode.
 
 ## Known Issues
 
@@ -23,7 +22,7 @@ prototype
 
 ## Release Notes
 
-### 0.0.1
+### 0.0.2
 
 prototype
 
